@@ -26,7 +26,7 @@ class ProductController extends Controller
             'detail' => 'required'
         ],
         [
-            'required' =>'Vui lòng nhập đầy đủ các trường'
+            'required' =>'Vui lòng nhập đầy đủ các trường :attribute'
         ]);
         if($validator->fails()) {
             return response()->json([
@@ -62,6 +62,9 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'detail' => 'required'
+        ],
+        [
+            'required' =>'Vui lòng nhập đầy đủ các trường :attribute'
         ]);
         if($validator->fails()){
             // return $this->sendError('Validation Error.', $validator->errors());  
